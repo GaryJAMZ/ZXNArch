@@ -1,0 +1,1 @@
+Este Reositorio es para colocar mi cnfiguracon sobre una distro basad en arch

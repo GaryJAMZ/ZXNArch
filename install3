@@ -1,0 +1,16 @@
+#!/bin/bash
+mkdir -p ~/Desktop/$1/repos
+cd ~/Desktop/$1/repos
+git clone https://aur.archlinux.org/paru-bin.git
+cd paru-bin
+makepkg -si
+sudo pacman -S --needed --noconfirm flameshot nemo kitty
+cd ..
+mkdir blackarch
+cd blackarch
+curl -O https://blackarch.org/strap.sh
+chmod +x strap.sh
+sudo ./strap.sh
+sudo pacman -Sy --noconfirm firewalld gparted htop clamav gimp openssh wget
+paru -S kvantum pamac-aur
+reboot
